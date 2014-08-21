@@ -121,6 +121,9 @@
   "Don't have an account?": "Don't have an account?",
   "We will send an email with a link to reset your password": "We will send an email with a link to reset your password",
   "We just sent a message to your email with instructions to create a new password": "We just sent a message to your email with instructions to create a new password",
+  "You have a new reply on you argument": "You have a new reply on you argument",
+  "Please click <a href=\"{url}\" target=\"_blank\">here</a> to see it": "Please click <a href=\"{url}\" target=\"_blank\">here</a> to see it",
+  "To unsubscribe from these emails, please click <a href=\"{url}\" target=\"_blank\">here</a>": "To unsubscribe from these emails, please click <a href=\"{url}\" target=\"_blank\">here</a>",
 
   "Signup complete" : "Signup complete",
   "Signup with email": "Signup with email",
