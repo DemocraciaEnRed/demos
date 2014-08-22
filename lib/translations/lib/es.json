@@ -101,6 +101,7 @@
   "comments.ordered-by": "Ordenados por",
   "comments.no-citizen-comments": "No hay argumentos de otros ciudadanos todavía",
   "comments.no-comments": "Ningún ciudadano ha argumentado todavía",
+  "comments.arguments.deleting-as-staff": "Estás borrando este argumento como miembro del staff",
   "Your argument was removed": "Tu argumento fue eliminado",
   "That comment is not yours!": "¡Ese argumento no es tuyo!",
   "Comment has replies, cannot be removed!": "¡El argumento tiene respuestas, no puede ser borrado!",
