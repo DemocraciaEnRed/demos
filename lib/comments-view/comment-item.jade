@@ -2,6 +2,7 @@
 - var dislikes = ~comment.downvotes.map(function(v) { return v.author; }).indexOf(citizen.id)
 - var flags = ~comment.flags.map(function(v) { return v.author; }).indexOf(citizen.id)
 - var own = comment.author.id == citizen.id
+- var staff = citizen.staff
 - var length = comment.replies.length
 - if (config['spam limit'])
   - var spam = comment.flags.length > config['spam limit']
@@ -19,11 +20,14 @@ li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
         - flags && classes.push('selected')
         - !citizen.id && classes.push('hide')
         - var spamTitle = flags ?  t('Not spam') : t('Spam')
+        - if (staff)
+          a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'))
+            i.icon-remove
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=classes)
           i.glyphicon.glyphicon-flag
           span.count=comment.flags.length ? comment.flags.length : ''
       - else
-        a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=(length ? 'hide' : ''))
+        a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=(length && !staff ? 'hide' : ''))
           i.icon-remove
         a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
           i.icon-pencil
@@ -35,8 +39,10 @@ li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
       small=':'
     .comment-body
       div.comment-text!=markdown(comment.text)
-      - if (own)
+      - if (own || staff)
         div.oncomment.remove-comment= t('comments.arguments.confirm-remove')
+          - if (staff)
+            p=t('comments.arguments.deleting-as-staff')
           div.remove-confirm-actions
             a.confirm-remove(href='#')= t('common.ok')
             a.cancel-remove(href='#')= t('common.cancel')
