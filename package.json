@@ -77,6 +77,7 @@
     "npm": "1.3.x"
   },
   "scripts": {
+    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build",
     "test": ""
   }
 }
