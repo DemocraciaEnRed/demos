@@ -1,0 +1,18 @@
+{
+  "name": "law-box",
+  "description": "Law box displayin most relevant information",
+  "dependencies": {
+    "component/truncate": "1.0.0"
+  },
+  "locals": [
+    "citizen",
+    "proposal-options",
+    "view"
+  ],
+  "scripts": [
+    "view.js"
+  ],
+  "templates": [ "template.jade" ],
+  "styles": [ "styles.styl" ],
+  "main": "view.js"
+}

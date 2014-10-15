@@ -18,7 +18,7 @@
     "component/closest": "0.1.4",
     "gvilarino/autocomplete": "fb4ee"
   },
-  "locals": [ "citizen", "request", "render" ],
+  "locals": [ "citizen", "request", "render", "laws" ],
   "scripts": [ "proposal-options.js" ],
   "templates": [
     "options.jade",

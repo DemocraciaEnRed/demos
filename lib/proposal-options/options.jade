@@ -20,9 +20,10 @@
         - else if (~neutrals.indexOf(citizen.id))
           include vote-neutral
 
-        a.meta-item.change-vote(href="#", class= voted && !closed ? '' : 'hide')
-          i.icon-refresh
-          small #{t('I want to change my vote')}.
+        a.meta-item.change-vote(href="#", class=(voted && !closed) ? '' : 'hide')
+          small
+            i.icon-refresh
+            |  #{t('I want to change my vote')}.
 
       .vote-options(class= voted || closed ? 'hide' : '')
         h5= t('Vote')
