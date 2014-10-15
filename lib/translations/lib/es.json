@@ -223,7 +223,8 @@
   "That argument is not yours!": "¡Ese argumento no es tuyo!",
   "There are no laws to display": "No hay leyes para mostrar",
 
-  "proposal-article.article.alert.text": "Ésta es una versión demo de DemocracyOS.",
+  "proposal-article.article.alert.text": "¿QUÉ LEYES QUERÉS QUE DEBATAMOS?",
+  "proposal-article.article.alert.subtext": "Calificá los proyectos, A partir del 12 de noviembre debatiremos, entre todos, los 3 más valorados.<br>Tu opinion vale, ahora vamos a poder comunicarnos usando la Red.",
   "proposal-article.article.alert.learn-more": "Más información",
 
   "Remove argument" : "Borrar argumento",
@@ -254,7 +255,7 @@
   "admin-laws-form.title.edit": "Edición de ley",
   "admin-laws-form.label.lawId": "Identificación oficial",
   "admin-laws-form.label.mediaTitle": "Título mediático",
-  "admin-laws-form.label.author": "Autor",
+  "admin-laws-form.label.author": "Autor/a",
   "admin-laws-form.label.source": "Fuente",
   "admin-laws-form.placeholder.source": "http://fuente-de-leyes.org/url-oficial/",
   "admin-laws-form.label.tag": "Comisión",

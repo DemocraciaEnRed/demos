@@ -4,11 +4,36 @@ border_radius = 3px
 /* Law view
 -------------------------------------------------- */
 article.proposal
-  margin 40px auto
-  min-height 300px
-  font-size 18px
-  line-height 1.5
-  position relative
+  // margin 40px auto
+  // min-height 300px
+  // font-size 18px
+  // line-height 1.5
+  // position relative
+
+  header
+    width 100%
+    overflow hidden
+    .title
+      width 70%
+      float left
+      margin-bottom 0
+    .author
+      width 30%
+      float right
+      a
+        display block
+        float left
+        img
+          border-radius 100px
+          margin-right 12px
+          max-width 64px
+          max-height 64px
+      .text
+        float left
+        span
+          display block
+          height 32px
+          line-height 32px
 
   a:hover
     color #428bca
@@ -41,6 +66,7 @@ article.proposal
   .summary
     font-size 110%
     margin 40px 0
+    font-family "Helvetica Neue",Helvetica,Arial,sans-serif
 
   .clauses
     p.clause
