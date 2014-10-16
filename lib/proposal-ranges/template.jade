@@ -1,0 +1,12 @@
+.ranges
+  h3=t('proposal.ranges.how-much-interest')
+  .bar
+  .ranges-container
+    - if (previous)
+      a.btn.btn-link(href='/law/#{previous.id}').previous
+        span.glyphicon.glyphicon-chevron-left
+        =t('proposal.ranges.previous')
+    - if (next)
+      a.btn.btn-link(href='/law/#{next.id}').skip
+        span.glyphicon.glyphicon-chevron-right
+        =t('proposal.ranges.skip')

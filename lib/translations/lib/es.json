@@ -354,5 +354,13 @@
   "side-comments.login": "Ingresar",
   "side-comments.signup": "Registrarse",
   "side-comments.delete.confirmation": "¿Deseas eliminar este comentario?",
-  "side-comments.confirmation.title": "Eliminar comentario"
+  "side-comments.confirmation.title": "Eliminar comentario",
+
+  "proposal.range.nothing": "Nada",
+  "proposal.range.little": "Poco",
+  "proposal.range.somewhat": "Algo",
+  "proposal.range.very": "Mucho",
+  "proposal.ranges.how-much-interest": "¿Cuánto te interesa este proyecto?",
+  "proposal.ranges.skip": "Saltear",
+  "proposal.ranges.previous": "Anterior"
 }

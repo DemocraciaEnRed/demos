@@ -1,0 +1,45 @@
+.ranges
+  width 600px
+  margin 40px auto
+  margin-bottom 20px
+  .ranges-container
+    position relative
+    &:hover > .range:not(:hover)
+      color grey
+      .button
+        background grey
+
+    .skip,
+    .previous
+      color #333
+      position absolute
+      text-align center
+      top 2px
+      &:hover
+        text-decoration none
+      .glyphicon
+        display block
+        margin-bottom 6px
+
+    .skip
+      right -100px
+    .previous
+      left -100px
+
+  @media screen and (max-width: 700px)
+    width 100%
+
+  h3
+    text-align center
+    margin-bottom 20px
+  .bar
+    position relative
+    height 5px
+    background grey
+    width 600px
+    z-index 0
+    top 18px
+    @media screen and (max-width: 700px)
+      width 100%
+  .range
+    width 25%

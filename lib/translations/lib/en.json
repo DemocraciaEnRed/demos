@@ -346,5 +346,13 @@
   "side-comments.login": "Login",
   "side-comments.signup": "Signup",
   "side-comments.delete.confirmation": "Are you sure you want to delete this comment?",
-  "side-comments.confirmation.title": "Delete comment"
+  "side-comments.confirmation.title": "Delete comment",
+
+  "proposal.range.nothing": "Nothing",
+  "proposal.range.little": "Little",
+  "proposal.range.somewhat": "Somewhat",
+  "proposal.range.very": "Very",
+  "proposal.ranges.how-much-interest": "How much you care about this?",
+  "proposal.ranges.skip": "Skip",
+  "proposal.ranges.previous": "Previous"
 }

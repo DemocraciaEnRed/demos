@@ -1,0 +1,19 @@
+{
+  "name": "proposal-ranges",
+  "description": "proposal's ranges view",
+  "dependencies": {
+    "component/dom": "1.0.6",
+    "component/t": "1.0.0"
+  },
+  "locals": [
+    "proposal-range",
+    "sidebar",
+    "view"
+  ],
+  "scripts": [ "view.js" ],
+  "templates": [
+    "template.jade"
+  ],
+  "styles": [ "styles.styl" ],
+  "main": "view.js"
+}
