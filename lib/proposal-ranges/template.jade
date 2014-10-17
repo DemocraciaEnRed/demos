@@ -3,10 +3,6 @@
   .bar
   .ranges-container
     - if (previous)
-      a.btn.btn-link(href='/law/#{previous.id}').previous
-        span.glyphicon.glyphicon-chevron-left
-        =t('proposal.ranges.previous')
+      a.btn.btn-link(href='/law/#{previous.id}').previous='<'
     - if (next)
-      a.btn.btn-link(href='/law/#{next.id}').skip
-        span.glyphicon.glyphicon-chevron-right
-        =t('proposal.ranges.skip')
+      a.btn.btn-link(href='/law/#{next.id}').skip='>'

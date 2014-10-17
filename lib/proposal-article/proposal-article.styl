@@ -4,36 +4,42 @@ border_radius = 3px
 /* Law view
 -------------------------------------------------- */
 article.proposal
-  // margin 40px auto
-  // min-height 300px
-  // font-size 18px
-  // line-height 1.5
-  // position relative
+  background #e7ecee
+  padding 22px
+  overflow hidden
 
   header
     width 100%
     overflow hidden
     .title
-      width 70%
+      border-radius 6px
+      margin-bottom 22px
+      padding 12px
+      text-align center
+      text-transform uppercase
+
+  .author
+    color #666
+    display table
+    font-size 16px
+    font-weight normal
+    margin auto
+    margin-bottom 22px
+    overflow hidden
+    a
+      display block
       float left
-      margin-bottom 0
-    .author
-      width 30%
-      float right
-      a
+      img
+        border-radius 100px
+        margin-right 12px
+        max-width 64px
+        max-height 64px
+    .text
+      float left
+      span
         display block
-        float left
-        img
-          border-radius 100px
-          margin-right 12px
-          max-width 64px
-          max-height 64px
-      .text
-        float left
-        span
-          display block
-          height 32px
-          line-height 32px
+        height 32px
+        line-height 32px
 
   a:hover
     color #428bca
@@ -41,6 +47,7 @@ article.proposal
 
   img
     max-width 100%
+    margin-bottom 12px
 
   .entry-tag
     font-weight bold
@@ -62,11 +69,13 @@ article.proposal
       width 80px
       height 80px
 
+  .entry-content
+    font-family "freight-sans-pro",sans-serif
 
   .summary
     font-size 110%
-    margin 40px 0
     font-family "Helvetica Neue",Helvetica,Arial,sans-serif
+    margin-bottom 22px
 
   .clauses
     p.clause
@@ -75,12 +84,6 @@ article.proposal
   h1
     margin-top 0
     margin-bottom 30px
-
-  h2.author
-    color #666
-    font-size 16px
-    font-weight normal
-    margin 0
 
   .meta-information
     margin-bottom 10px

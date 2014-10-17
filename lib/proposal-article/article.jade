@@ -1,11 +1,27 @@
 - var closed = proposal.closed
+
+mixin author
+  - if (proposal.author)
+    h2.author
+      - if (proposal.authorPictureUrl)
+        a(href=proposal.authorPictureUrl, target='_blank')
+          img(title=proposal.author, src=proposal.authorPictureUrl)
+        .text
+          span.name=t('admin-laws-form.label.author') + ': ' + proposal.author
+          - if (proposal.party)
+            span.party=t('admin-laws-form.label.party') + ' ' + proposal.party
+      - else
+        span.name=t('admin-laws-form.label.author') + ': ' + proposal.author
+        - if (proposal.party)
+          span.party=t('admin-laws-form.label.party') + ' ' + proposal.party
+
 .row
   - var learnMore = config['learn more url']
   - if (learnMore)
-    div.alert.alert-warning.alert-dismissable.system-alert.col-lg-8.col-lg-offset-2
+    div.alert.system-alert.col-lg-8.col-lg-offset-2
       h3 #{t('proposal-article.article.alert.text')}
-      small!=t('proposal-article.article.alert.subtext')
-      a.alert-link(href=learnMore, target="_blank") #{t('proposal-article.article.alert.learn-more')}
+      //- small!=t('proposal-article.article.alert.subtext')
+      //- a.alert-link(href=learnMore, target="_blank") #{t('proposal-article.article.alert.learn-more')}
 
 
   article.proposal.col-lg-10.col-lg-offset-1.commentable-container
@@ -35,20 +51,10 @@
     //-       span.meta-item.meta-timeago= t('Unknown closing date')
 
     header
-      h1.title=proposal.mediaTitle
-        //- h3=proposal.title
-      - if (proposal.author)
-        h2.author
-          - if (proposal.authorUrl)
-            a(href=proposal.authorUrl, target='_blank')
-              img(title=proposal.author, src=proposal.authorUrl)
-            .text
-              span.name=t('admin-laws-form.label.author') + ': ' + proposal.author
-              span.party Bloque: PRO
-          - else
-            span.name=proposal.author
-            span.party Bloque: PRO
-    .entry-content
+      h1.title(style='background: #{proposal.backgroundColor}; color: #{proposal.fontColor}')=proposal.mediaTitle
+    .entry-content.col-xs-12.col-md-6
+      img(src='http://www.clarin.com/ciudades/Diagonal-Sur-Peru-sufrieron-DYN_CLAIMA20140930_0041_27.jpg')
+    .entry-content.col-xs-12.col-md-6
       - var summary = proposal.summary
       - var paragraphs = summary.split("\n")
       .summary
@@ -70,13 +76,14 @@
             - else
               a.read-more(href="#")= t('read more')
 
-    //- Article source
-    - if (proposal.source)
-      .source
-        p
-          span.glyphicon.glyphicon-link
-          a(target="_blank", href="#{proposal.source}")
-           | #{t('View the original text')}
+      +author
+      //- Article source
+      - if (proposal.source)
+        .source
+          p
+            span.glyphicon.glyphicon-link
+            a(target="_blank", href="#{proposal.source}")
+             | #{t('View the original text')}
 
     //- Article links
     - if (proposal.links && proposal.links.length)
