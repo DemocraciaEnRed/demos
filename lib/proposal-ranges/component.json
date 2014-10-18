@@ -7,7 +7,7 @@
   },
   "locals": [
     "proposal-range",
-    "sidebar",
+    "laws",
     "view"
   ],
   "scripts": [ "view.js" ],

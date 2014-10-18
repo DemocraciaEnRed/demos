@@ -18,7 +18,8 @@
     "proposal-article",
     "proposal-ranges",
     "comments-view",
-    "browser-lock"
+    "browser-lock",
+    "laws"
   ],
   "scripts": [ "law.js" ],
   "styles": [ ],

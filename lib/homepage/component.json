@@ -14,7 +14,7 @@
   "development": {},
   "locals": [
     "citizen",
-    "sidebar",
+    "laws",
     "render"
   ],
   "scripts": [
