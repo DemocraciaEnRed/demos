@@ -1,10 +1,24 @@
 #summary-container
-  h1, h4
+  h1,
+  h4
     text-align center
 
   h1
     text-transform uppercase
+
+  .laws
+    padding 0
+
   .bill-proposal
+    width 33.33%
+    padding 0 .5em
+
+    @media (max-width: 960px)
+      width 50%
+
+    @media (max-width: 500px)
+      width 100%
+
     .inner
       .author
         font-size .8em
@@ -14,7 +28,7 @@
         width 100%
         margin-bottom 1em
       .link
-        background url("/lib/bill-proposal-demo/images/clip.svg") no-repeat left 0.6em
+        background url('/lib/bill-proposal/images/clip.svg') no-repeat left 0.6em
         padding-left 1.7em
     .actions
       display none
@@ -44,6 +58,3 @@
   .share-message
     color #ccc
     font-weight bold
-
-// #browser
-//   overflow hidden
