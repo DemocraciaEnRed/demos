@@ -1,4 +1,84 @@
 
+0.8.24b / 2014-11-04
+==================
+
+ * Fix styles on /gracias page. Closes #74
+ * Decreased font size of score text in Summary
+ * Deleted forgotten debugger;
+ * Fixed scroll to top when changing score
+ * Fixed law score status lazy loading. Closes #74
+ * Fix some texts #71
+ * Fixed social buttons alignment. Closes #72
+ * Remove score from other arrays when changing score and push it to the corresponding array. Closes #73
+ * Fixed Summary sharing buttons position
+ * Merge branch 'development' of github.com:DemocraciaEnRed/demos into development
+ * Fixed image alignment in Summary. Closes #25
+ * Fix setting progress to over 100% or less than 0%
+ * Fix prev and next navigation buttons on mobile and setting progress to an over 100% or fewer than %0. Closes #66
+ * Add final texts. Closes #71
+ * Scoring controls are visible in summary view
+ * Fix showing score when law is not voted
+ * Fix redirect to /gracias when logged in and all bills are scored
+ * fix reloading laws on signin/signout. Closes #65
+ * Fix issue when all bills are voted #64
+ * Fixed scroll issue when navigating. Closes #69.
+ * Fix progress bar. Closes #64
+ * Fixed font styles. Closes #61.
+ * Fixed boot, bill-proposal and summary fonts
+ * Add bill sorting when specifiying law id for logged users #29
+ * Fix tweet text and link in case the author does not have a twitter account
+ * Share buttons and text centered vertically
+ * Social buttons: set border radius
+ * Fixed social buttons alignment and responsiveness
+ * Automatic next law after scoring
+ * make bill with ID provided by URL first element of the list for non logged in requests #29
+ * Updated social links URLs
+ * /summary renamed to /gracias
+ * After voting last law, redirects to /gracias
+ * Fixed progress bar caption right margin
+ * Merge pull request #62 from DemocraciaEnRed/fix/text-sizes-and-styles
+ * Remove deprecated stylesheets
+ * Fix styles and texts for non compatible browser page #58
+ * Add non compatible browsers page for IE lte 8. Closes #58
+ * Add Raleway font and fix bill proposal type sizes Closes #61
+ * Add rendering a incompatible browser page when using IE lte 8
+ * default bill sorting for logged in citizens #29
+ * New layout for twitter button #46
+ * New layout for the Talk to the Author button #46
+ * Add button for tweeting to the author #46
+ * Redirect to /signup when unlogged user attempts to vote. Closes #60
+ * Remove footer image and link it to a clouded image. Closes #59
+ * Update title on law change
+ * When navigating laws, change the url. Closes #57
+ * Fix titles sizes. Closes #50
+ * Set context parameters to know law id #29
+ * Hide prev and next buttons and text on first and last BillProposal
+ * Add page:render event on help
+ * Fix reference to images on BillProposal
+ * Fix styles in /proyectos and /acerca-de for entry-tag
+ * Add random bill sorting #29
+ * Fix navigation on mobile and loading lock
+ * Fix routing for /acerca-de and /proyectos, and title styles for #45
+ * Add scoring options
+ * Layout refactored
+ * Update footer logo href and title. Closes #44
+ * Disable next and prev buttons
+ * Extend summary length to 350 characters
+ * Add carrousel and fix styles
+ * Added empty tile on navigator for first and last law. Closes #43.
+ * Add styles for BillProposal
+ * fix laws loading
+ * Separating into BillProposalViewer and BillProposal
+ * Improved Summary layout
+ * Separate into BillProposalViewer
+ * Done Summary layout
+ * Add global subtitle. Update progress caption to bold
+ * Created Summary page
+ * Fix logo position on mobile. Expand progress bar on mobile to 75%
+ * Move progress bar caption a few pxs to the right, translate to spanish the /projects and /about routes
+ * Merge pull request #42 from mairwilliams/patch-1
+ * Update tos.md
+
 0.8.24a / 2014-10-29
 ==================
 
