@@ -7,11 +7,7 @@
 - var scored = citizen.id && ~census.indexOf(citizen.id)
 - var closed = law.closingAt && +new Date(law.closingAt) < Date.now()
 
-- var scoreNothings = 0
-- var scoreLittles = 3
-- var scoreSomewhats = 7
-- var scoreVerys = 10
-- var totalScore = scoreNothings * nothings.length + scoreLittles * littles.length + scoreSomewhats * somewhats.length + scoreVerys * verys.length
+- var totalScore = law.totalScore
 
 .bill-proposal(data-id=law.id)
   .inner
