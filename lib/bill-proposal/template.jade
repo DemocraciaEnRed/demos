@@ -5,6 +5,13 @@
 - var census = nothings.concat(littles).concat(somewhats).concat(verys)
 
 - var scored = citizen.id && ~census.indexOf(citizen.id)
+- var closed = law.closingAt && +new Date(law.closingAt) < Date.now()
+
+- var scoreNothings = 0
+- var scoreLittles = 3
+- var scoreSomewhats = 5
+- var scoreVerys = 7
+- var totalScore = scoreNothings * nothings.length + scoreLittles * littles.length + scoreSomewhats * somewhats.length + scoreVerys * verys.length
 
 .bill-proposal(data-id=law.id)
   .inner
@@ -37,35 +44,84 @@
 
     a.link(href=law.source, target='_blank')=t('View the original text')
 
-  .actions
-    .score-selector
-      .scored.text-center(class=!scored ? 'hide' : '')
-        - var title = ''
-        - if (~nothings.indexOf(citizen.id))
-          - var title = 'scoring.value.nothing'
-        - if (~littles.indexOf(citizen.id))
-          - var title = 'scoring.value.little'
-        - if (~somewhats.indexOf(citizen.id))
-          - var title = 'scoring.value.somewhat'
-        - if (~verys.indexOf(citizen.id))
-          - var title = 'scoring.value.very'
-        h2.title!=t(title)
-        a.change-score.btn.btn-info=t('scoring.options.change-score')
-      .scores(class=scored ? 'hide' : '')
-        h2=t('scoring.options.title')
-        ul
-          li.score.score-nothing
-            span=t('scoring.options.nothing')
-          li.score.score-little
-            span=t('scoring.options.little')
-          li.score.score-somewhat
-            span=t('scoring.options.somewhat')
-          li.score.score-very
-            span=t('scoring.options.very')
+    - if (closed)
+      .results-box
+        .scored.text-center(class=!scored ? 'hide' : '')
+          - var title = ''
+          - if (~nothings.indexOf(citizen.id))
+            - var title = 'scoring.value.nothing'
+          - if (~littles.indexOf(citizen.id))
+            - var title = 'scoring.value.little'
+          - if (~somewhats.indexOf(citizen.id))
+            - var title = 'scoring.value.somewhat'
+          - if (~verys.indexOf(citizen.id))
+            - var title = 'scoring.value.very'
+          h2.title!=t(title)
+        .row
+          .results-chart(class= census.length ? '' : 'hide').col-xs-12.col-sm-6.text-center
+            canvas#results-chart(width="145", height="145")
+          .results-summary(class= census.length ? '' : 'hide').col-xs-12.col-xs-offset-3.col-sm-6.col-sm-offset-0
+            .scores-verys.scores-results
+              - var width = census.length ? (verys.length/census.length)*100 : 0;
+              - var width = Math.round(width*100)/100
+              - var s = 1 === verys.length ? '' : 's'
+                span.percent=t('scoring.options.very') + ' ' + width + '% '
+                span.scores #{verys.length} #{t('vote') + s}
 
-    //- - if (previousLaw)
-    .prev
-      span=t('common.prev')
-    //- - if (nextLaw)
-    .next
-      span=t('common.next')
+            .scores-somewhats.scores-results
+              - var width = census.length ? (somewhats.length/census.length)*100 : 0;
+              - var width = Math.round(width*100)/100
+              - var s = 1 === somewhats.length ? '' : 's'
+                span.percent=t('scoring.options.somewhat') + ' ' + width + '% '
+                span.scores #{somewhats.length} #{t('vote') + s}
+
+            .scores-littles.scores-results
+              - var width = census.length ? (littles.length/census.length)*100 : 0;
+              - var width = Math.round(width*100)/100
+              - var s = 1 === littles.length ? '' : 's'
+                span.percent=t('scoring.options.little') + ' ' + width + '% '
+                span.scores #{littles.length} #{t('vote') + s}
+
+            .scores-nothings.scores-results
+              - var width = census.length ? (nothings.length/census.length)*100 : 0;
+              - var width = Math.round(width*100)/100
+              - var s = 1 === nothings.length ? '' : 's'
+              span.percent=t('scoring.options.nothing') + ' ' + width + '% '
+              span.scores #{nothings.length} #{t('vote') + s}
+          .scored.text-center.col-xs-12
+            h2.title=t('scoring.total-score', {totalScore: totalScore})
+            small: a(href='/acerca-de')=t('projects.how-was-calculated')
+
+  - if (!closed)
+    .actions
+      .score-selector
+        .scored.text-center(class=!scored ? 'hide' : '')
+          - var title = ''
+          - if (~nothings.indexOf(citizen.id))
+            - var title = 'scoring.value.nothing'
+          - if (~littles.indexOf(citizen.id))
+            - var title = 'scoring.value.little'
+          - if (~somewhats.indexOf(citizen.id))
+            - var title = 'scoring.value.somewhat'
+          - if (~verys.indexOf(citizen.id))
+            - var title = 'scoring.value.very'
+          h2.title!=t(title)
+          a.change-score.btn.btn-info=t('scoring.options.change-score')
+        .scores(class=scored ? 'hide' : '')
+          h2=t('scoring.options.title')
+          ul
+            li.score.score-nothing
+              span=t('scoring.options.nothing')
+            li.score.score-little
+              span=t('scoring.options.little')
+            li.score.score-somewhat
+              span=t('scoring.options.somewhat')
+            li.score.score-very
+              span=t('scoring.options.very')
+
+      //- - if (previousLaw)
+      .prev
+        span=t('common.prev')
+      //- - if (nextLaw)
+      .next
+        span=t('common.next')

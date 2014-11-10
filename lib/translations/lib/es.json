@@ -397,6 +397,7 @@
   "projects.paragraph.2.8": "El resultado de la sumatoria de calificaciones compone el puntaje definitivo de cada proyecto. Los 3 proyectos con mayor puntaje, serán los ganadores.",
   "projects.title.3": "¿Cuáles son los proyectos?",
   "projects.paragraph.3.1": "Por cualquier duda comunicate con nosotros a <a href=\"mailto:demos@legislatura.gov.ar\">demos@legislatura.gov.ar<a>",
+  "projects.how-was-calculated": "¿Cómo se calculó?",
 
   "scoring.options.title": "¿Cuánto te interesa debatir este proyecto?",
   "scoring.options.nothing": "Nada",
@@ -408,6 +409,7 @@
   "scoring.value.little": "Este proyecto te interesa <strong>poco</strong>",
   "scoring.value.somewhat": "Este proyecto te interesa <strong>bastante</strong>",
   "scoring.value.very": "Este proyecto te interesa <strong>mucho</strong>",
+  "scoring.total-score": "Puntaje total: {totalScore}",
 
   "footer.using-technology-from": "con tecnología de",
 

@@ -8,6 +8,7 @@
     "component/bus": "^0.0.2",
     "component/dom": "0.7.1",
     "component/t": "1.0.0",
+    "cristiandouce/Chart.js": "eef51",
     "jfresco/progress": "*"
   },
   "locals": [
