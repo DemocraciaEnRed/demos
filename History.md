@@ -1,5 +1,11 @@
 
-0.8.25n / 2014-11-12
+0.8.24o / 2014-11-13
+==================
+
+ * Forgotten space
+ * Removed fields on select in /law/all
+
+0.8.24n / 2014-11-12
 ==================
 
  * Remove loading first law
