@@ -1,10 +1,9 @@
-- var nothings = law.nothings || []
-- var littles = law.littles || []
-- var somewhats = law.somewhats || []
-- var verys = law.verys || []
-- var census = nothings.concat(littles).concat(somewhats).concat(verys)
-
-- var scored = citizen.id && ~census.indexOf(citizen.id)
+- var nothings = law.totalNothings
+- var littles = law.totalLittles
+- var somewhats = law.totalSomewhats
+- var verys = law.totalVerys
+- var scored = law.scored
+- var census = law.scoreCensus
 
 .bill-proposal(data-id=law.id)
   .inner
@@ -38,48 +37,40 @@
     a.link(href=law.source, target='_blank')=t('View the original text')
 
     .results-box
-      .scored.text-center(class=!scored ? 'hide' : '')
-        - var title = ''
-        - if (~nothings.indexOf(citizen.id))
-          - var title = 'scoring.value.nothing'
-        - if (~littles.indexOf(citizen.id))
-          - var title = 'scoring.value.little'
-        - if (~somewhats.indexOf(citizen.id))
-          - var title = 'scoring.value.somewhat'
-        - if (~verys.indexOf(citizen.id))
-          - var title = 'scoring.value.very'
+      .scored.text-center
+        - var title = 'scoring.value' + (scored ? scored.value : '')
         h2.title!=t(title)
       .row
-        .results-chart(class= census.length ? '' : 'hide').col-xs-12.col-sm-6.text-center
+        .results-chart.col-xs-12.col-sm-6.text-center
           canvas#results-chart(width="145", height="145")
-        .results-summary(class= census.length ? '' : 'hide').col-xs-12.col-xs-offset-3.col-sm-6.col-sm-offset-0
+        .results-summary.col-xs-12.col-xs-offset-3.col-sm-6.col-sm-offset-0
           .scores-verys.scores-results
-            - var width = census.length ? (verys.length/census.length)*100 : 0;
+            - var width = census ? verys.length/census)*100 : 0;
             - var width = Math.round(width*100)/100
-            - var s = 1 === verys.length ? '' : 's'
+            - var s = verys === 1 ? '' : 's'
               span.percent=t('scoring.options.very') + ' ' + width + '% '
-              span.scores #{verys.length} #{t('vote') + s}
+              span.scores #{totalVerys} #{t('vote') + s}
 
           .scores-somewhats.scores-results
-            - var width = census.length ? (somewhats.length/census.length)*100 : 0;
+            - var width = census ? (somewhats/census)*100 : 0;
             - var width = Math.round(width*100)/100
-            - var s = 1 === somewhats.length ? '' : 's'
+            - var s = 1 === somewhats ? '' : 's'
               span.percent=t('scoring.options.somewhat') + ' ' + width + '% '
-              span.scores #{somewhats.length} #{t('vote') + s}
+              span.scores #{somewhats} #{t('vote') + s}
 
           .scores-littles.scores-results
-            - var width = census.length ? (littles.length/census.length)*100 : 0;
+            - var width = census ? (littles/census)*100 : 0;
             - var width = Math.round(width*100)/100
-            - var s = 1 === littles.length ? '' : 's'
+            - var s = 1 === littles ? '' : 's'
               span.percent=t('scoring.options.little') + ' ' + width + '% '
-              span.scores #{littles.length} #{t('vote') + s}
+              span.scores #{littles} #{t('vote') + s}
 
           .scores-nothings.scores-results
-            - var width = census.length ? (nothings.length/census.length)*100 : 0;
+            - var width = census ? (nothings/census)*100 : 0;
             - var width = Math.round(width*100)/100
-            - var s = 1 === nothings.length ? '' : 's'
+            - var s = 1 === nothings ? '' : 's'
             span.percent=t('scoring.options.nothing') + ' ' + width + '% '
-            span.scores #{nothings.length} #{t('vote') + s}
+            span.scores #{nothings} #{t('vote') + s}
         .scored.text-center.col-xs-12
           h2.title=t('scoring.total-score', {totalScore: law.totalScore})
           small: a(href='/proyectos')=t('projects.how-was-calculated')

@@ -1,0 +1,19 @@
+{
+  "name": "laws-results",
+  "description": "Collection of results law",
+  "dependencies": {
+    "component/emitter": "*",
+    "visionmedia/debug": "0.7.4"
+  },
+  "locals": [
+    "citizen",
+    "request",
+    "render",
+    "stateful"
+  ],
+  "scripts": [
+    "laws.js",
+    "proto.js"
+  ],
+  "main": "laws.js"
+}
